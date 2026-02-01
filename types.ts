@@ -1,5 +1,4 @@
 
-// Fix: Added missing members to ComponentType, and exported Terminal, Connection, and PlacedComponent to resolve compilation errors.
 export enum ComponentType {
   UNO = 'uno',
   LED = 'led',
@@ -10,7 +9,6 @@ export enum ComponentType {
   GROUND = 'ground'
 }
 
-// Fix: Added Terminal interface for component connection points used in constants.tsx
 export interface Terminal {
   id: string;
   name: string;
@@ -18,7 +16,6 @@ export interface Terminal {
   y: number;
 }
 
-// Fix: Added Connection interface for defining links between component terminals
 export interface Connection {
   fromId: string;
   fromTerminal: string;
@@ -26,7 +23,6 @@ export interface Connection {
   toTerminal: string;
 }
 
-// Fix: Enhanced ArduinoComponent to include optional value for circuit validation
 export interface ArduinoComponent {
   id: string;
   type: ComponentType;
@@ -34,9 +30,10 @@ export interface ArduinoComponent {
   y: number;
   pin: number | null;
   value?: string;
+  arduinoId?: string; // Links component to a specific Arduino unit
+  label?: string;     // Friendly name (e.g., A1, A2)
 }
 
-// Fix: Exported PlacedComponent as an alias for ArduinoComponent to support geminiService.ts
 export type PlacedComponent = ArduinoComponent;
 
 export interface ValidationResult {
@@ -44,3 +41,4 @@ export interface ValidationResult {
   message: string;
   suggestions: string[];
 }
+
