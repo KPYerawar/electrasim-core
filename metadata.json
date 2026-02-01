@@ -1,0 +1,5 @@
+{
+  "name": "ElectraSim - Interactive Circuit Designer",
+  "description": "A professional-grade electronic component simulator where you can drag and drop components, connect them with wires, and use AI to validate your circuit designs for functionality and safety.",
+  "requestFramePermissions": []
+}
